@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CellStart - ChronoNAD+ | Boost Your Cellular Health</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003766;
+            --light-blue: #e6f3ff;
+            --white: #ffffff;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-600: #6c757d;
+            --gray-800: #343a40;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            overflow-x: hidden;
+        }
+
+        /* Header Fonts */
+        h1, h2, h3 {
+            font-family: 'Cabin', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .poppins-header {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 55, 102, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Cabin', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-800);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .cta-btn {
+            background: white;
+            color: var(--primary-blue);
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-blue);
+            border-radius: 25px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            border: 2px solid var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 55, 102, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cabin', sans-serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+        }
+
+        .luxury-tagline {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: #f8f9fa;
+            color: var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-showcase {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .product-image {
+            width: 200px;
+            height: 300px;
+            background: linear-gradient(145deg, #e6f3ff, #cce7ff);
+            border-radius: 15px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-name {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-tagline {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cabin', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Custom Section 1: The Science Behind NAD+ */
+        .science-section {
+            background: var(--gray-100);
+        }
+
+        .science-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .science-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .advantage-highlight {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .advantage-highlight h4 {
+            font-family: 'Cabin', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .science-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number {
+            font-family: 'Cabin', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .infographic-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .nad-chart {
+            background: var(--light-blue);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .chart-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-bars {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            gap: 2rem;
+            height: 200px;
+            margin-bottom: 1rem;
+        }
+
+        .chart-bar {
+            width: 60px;
+            background: var(--primary-blue);
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+        }
+
+        .bar-nad-alone {
+            height: 80px;
+            background: #87ceeb;
+        }
+
+        .bar-resveratrol {
+            height: 160px;
+            background: var(--primary-blue);
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .chart-label {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        /* Lifestyle Section */
+        .lifestyle-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 5rem 0;
+        }
+
+        .lifestyle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .lifestyle-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lifestyle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .lifestyle-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .luxury-bg {
+            background: linear-gradient(135deg, #f8f4e6 0%, #e8dcc0 100%);
+        }
+
+        .playful-bg {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+        }
+
+        .inclusive-bg {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .image-placeholder {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .lifestyle-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .lifestyle-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .playful-quote {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            font-style: italic;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .playful-quote::before {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+        }
+
+        .inclusive-message {
+            background: linear-gradient(135deg, var(--light-blue), #cce7ff);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .inclusive-message h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .inclusive-message p {
+            color: var(--gray-700);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Custom Section 2: How They Work Together */
+        .mechanism-section {
+            background: white;
+        }
+
+        .mechanism-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mechanism-flow {
+            background: var(--gray-100);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .flow-step {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .flow-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-arrow {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Cabin', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .science-grid,
+            .mechanism-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .science-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lifestyle-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-animate.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Slide 4 Logo 1.png" alt="CellStart Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="logo-icon" style="display: none;">CS</div>
+                <span class="logo-text">CellStart</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#science">Science</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#lifestyle">Lifestyle</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#order" class="cta-btn">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in-up">
+                <h1>Elevating Your Days with ChronoNAD+</h1>
+                <div class="subtitle">A Longevity Journey</div>
+                <div class="luxury-tagline">Premium cellular wellness for the discerning individual</div>
+                <p>Experience the power of advanced NAD+ supplementation combined with Resveratrol. Our clinically-backed formula delivers up to 1.7x higher NAD+ levels, helping you unlock your potential and feel authentically vibrant.</p>
+                <div class="hero-buttons">
+                    <a href="#order" class="btn-primary">
+                        <i class="fas fa-shopping-cart"></i>
+                        Shop Now
+                    </a>
+                    <a href="#science" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in-up">
+                <div class="product-showcase">
+                    <div class="product-image">
+                        <img src="Slide 4 Product.png" alt="ChronoNAD+ Product" style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <i class="fas fa-capsules" style="display: none;"></i>
+                    </div>
+                    <div class="product-name">ChronoNAD+</div>
+                    <div class="product-tagline">Advanced Cellular Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Section 1: The Science Behind NAD+ -->
+    <section id="science" class="section science-section">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2>The Science of Cellular Energy</h2>
+                <p>Discover why NAD+ is crucial for cellular health and how our formula maximizes its benefits</p>
+            </div>
+            
+            <div class="science-grid">
+                <div class="science-content scroll-animate">
+                    <h3 class="poppins-header">Why is NAD+ Your Cellular Fuel?</h3>
+                    
+                    <!-- NAD+ Benefits Infographic -->
+                    <div style="margin: 2rem 0;">
+                        <img src="Slide 7 Infographic 1.png" alt="Why is NAD+ Your Cellular Fuel?" style="width: 100%; height: auto; border-radius: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+                        <div class="science-stats" style="display: none;">
+                            <div class="stat-item">
+                                <div class="stat-icon">⚡</div>
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Energy Production</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">🧬</div>
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">DNA Repair</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">🛡️</div>
+                                <div class="stat-number">360°</div>
+                                <div class="stat-label">Cellular Defense</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="advantage-highlight">
+                        <h4>The 1.7x Advantage</h4>
+                        <p>Research shows that combining NAD+ with Resveratrol can boost NAD+ levels in our body up to <strong>1.7x higher</strong> than using NAD+ alone.</p>
+                    </div>
+
+                    <ul style="margin-top: 1.5rem; padding-left: 1.5rem;">
+                        <li><strong>Headline:</strong> Why Is NAD+ Your Cellular Fuel?</li>
+                        <li><strong>Subhead:</strong> Restore your cellular energy naturally</li>
+                        <li><strong>Headline:</strong> Unlock Your Potential</li>
+                        <li><strong>Subhead:</strong> The key to a more vibrant you lies in your cells</li>
+                    </ul>
+                </div>
+
+                <div class="infographic-container scroll-animate">
+                    <img src="Slide 6 Infographic 2.png" alt="NAD+ Decline Chart" style="width: 100%; height: auto; border-radius: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <div class="nad-chart" style="display: none;">
+                        <h4 class="chart-title">NAD+ Declines by Up to 65% Between Ages 30 and 70</h4>
+                        <div class="chart-bars">
+                            <div class="chart-bar bar-nad-alone">50%</div>
+                            <div class="chart-bar bar-resveratrol">85%</div>
+                        </div>
+                        <div class="chart-labels">
+                            <div class="chart-label">NAD+ Alone</div>
+                            <div class="chart-label">NAD+ + Resveratrol</div>
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray-600);">
+                            *Source: Fang et al., Pharmacology Research & Perspectives, 2022
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Section 2: How They Work Together -->
+    <section id="benefits" class="section mechanism-section">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2 class="poppins-header">How They Work Together</h2>
+                <p>Understanding the synergistic relationship between NAD+ and Resveratrol</p>
+            </div>
+
+            <div class="mechanism-grid">
+                <div class="mechanism-flow scroll-animate">
+                    <div class="flow-step">
+                        <div class="step-title">Resveratrol</div>
+                        <p>Activates "Longevity" genes and prepares cellular pathways</p>
+                    </div>
+                    <div class="step-arrow">⬇</div>
+                    <div class="flow-step">
+                        <div class="step-title">Activates "Longevity" Genes*</div>
+                        <p>Enhances cellular repair mechanisms and metabolic efficiency</p>
+                    </div>
+                    <div class="step-arrow">⬇</div>
+                    <div class="flow-step">
+                        <div class="step-title">Boosts NAD+'s Function*</div>
+                        <p>Maximizes NAD+ utilization for optimal cellular energy</p>
+                    </div>
+                    <div class="step-arrow">⬇</div>
+                    <div class="flow-step">
+                        <div class="step-title">Enhanced Cellular Health & Defense*</div>
+                        <p>Complete cellular support for vitality and longevity</p>
+                    </div>
+                </div>
+
+                <div class="benefits-content scroll-animate">
+                    <h3>Increase in NAD+ in Key Tissues*</h3>
+                    
+                    <!-- Tissue Comparison Chart -->
+                    <div style="margin: 2rem 0;">
+                        <img src="Slide 8 Infographic 1.gif" alt="Increase in NAD+ in Key Tissues" style="width: 100%; height: auto; border-radius: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+                    </div>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🧠</div>
+                            <div class="benefit-title">Brain Health</div>
+                            <p>Enhanced cognitive function and mental clarity</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">💪</div>
+                            <div class="benefit-title">Muscle Function</div>
+                            <p>Improved strength and endurance</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">❤️</div>
+                            <div class="benefit-title">Heart Health</div>
+                            <p>Cardiovascular support and circulation</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">⚡</div>
+                            <div class="benefit-title">Energy Levels</div>
+                            <p>Sustained energy throughout the day</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--light-blue); border-radius: 10px;">
+                        <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">Call-to-Action (CTA) Text:</h4>
+                        <ul style="margin-left: 1.5rem;">
+                            <li><strong>"Shop Now"</strong></li>
+                            <li><strong>"Learn More"</strong></li>
+                            <li><strong>"Discover The Formula"</strong></li>
+                            <li><strong>"Get My NAD+"</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle & Wellness Attitude Section -->
+    <section id="lifestyle" class="lifestyle-section">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <h2 class="poppins-header">Wellness With Attitude</h2>
+                <p>Join a diverse community of wellness enthusiasts who choose authenticity over perfection</p>
+            </div>
+
+            <div class="lifestyle-grid">
+                <div class="lifestyle-card scroll-animate">
+                    <div class="lifestyle-image luxury-bg">
+                        <div class="image-placeholder">✨</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="lifestyle-title">Luxury/Premium</div>
+                        <div class="lifestyle-description">
+                            "Elevating your days with Axed: a longevity journey"
+                            <br><br>
+                            Experience the sophistication of science-backed premium cellular wellness for the discerning individual.
+                        </div>
+                        <div class="playful-quote">
+                            Your longevity journey deserves the finest
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lifestyle-card scroll-animate">
+                    <div class="lifestyle-image playful-bg">
+                        <div class="image-placeholder">💪</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="lifestyle-title">Bold, Playful "Wellness With Attitude"</div>
+                        <div class="lifestyle-description">
+                            "Sleep well, stress less" - awake to new possibilities!
+                            <br><br>
+                            Get busy with science. Wellness that's fun, effective, and doesn't take itself too seriously.
+                        </div>
+                        <div class="playful-quote">
+                            Wellness doesn't have to be boring
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lifestyle-card scroll-animate">
+                    <div class="lifestyle-image inclusive-bg">
+                        <div class="image-placeholder">🌍</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="lifestyle-title">Authentic & Inclusive Lifestyle</div>
+                        <div class="lifestyle-description">
+                            Real users and diverse 'brand ambassadors' in relatable situations. Everyone can partake in longevity and wellness.
+                        </div>
+                        <div class="playful-quote">
+                            Diverse bodies, unified wellness goals
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inclusive-message scroll-animate">
+                <h3>Our Clinically Backed Brand Philosophy</h3>
+                <p>
+                    We use lifestyle photography to inspire, not intimidate. Science elements and lab imagery are used sparingly to support credibility without overwhelming the viewer. 
+                    <br><br>
+                    <strong>Authentic influencer-style photography is central.</strong> We show real users and diverse 'brand ambassadors' in relatable situations to signal everyone can partake in longevity and wellness to build trust.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CellStart</h4>
+                    <p>Revolutionizing cellular health through advanced NAD+ supplementation and cutting-edge research.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#science">The Science</a>
+                    <a href="#benefits">Benefits</a>
+                    <a href="#order">Order Now</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@cellstart.com</p>
+                    <p>Phone: 1-800-CELLSTART</p>
+                    <p>Support: support@cellstart.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CellStart. All rights reserved. | *These statements have not been evaluated by the FDA.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
